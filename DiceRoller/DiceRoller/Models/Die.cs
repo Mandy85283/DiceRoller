@@ -17,13 +17,20 @@ namespace DiceRoller.Models
         {
             NumSides = 6;
             Name = "d6";
-            CurrentSide = 2;
-
+            Roll();
         }
+
+        public Die(int numSides)
+        {
+            NumSides = numSides;
+            Name = "d" + numSides;
+            Roll();
+        }
+
         public void Roll()
         {
-           // Random random = new Random();
-            //CurrentSide = random.Next(NumSides) + 1;
+            Random random = new Random();
+            CurrentSide = random.Next(NumSides) + 1;
         }
     }
 }
