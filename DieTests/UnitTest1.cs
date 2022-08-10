@@ -35,6 +35,37 @@ namespace DieTests
         [DataRow(10)]
         [DataRow(12)]
         [DataRow(20)]
+        public void RollSetsSideCorrectlyForCustomSides(int sides)
+        {
+            Die d = new Die(sides);
+
+            for (int i = 0; i < 100; i++)
+            {
+                d.Roll();
+                d.CurrentSide.Should().BeInRange(1, sides);
+            }
+
+
+
+        }
+
+        [TestMethod]
+        public void RollSetsSideCorrectly()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                def.Roll();
+                def.CurrentSide.Should().BeInRange(1, 6);
+            }
+        }
+
+        [TestMethod]
+        [DataRow(3)]
+        [DataRow(4)]
+        [DataRow(8)]
+        [DataRow(10)]
+        [DataRow(12)]
+        [DataRow(20)]
 
         public void DieHasCustomSides(int sides)
         {
@@ -60,13 +91,17 @@ namespace DieTests
         }
 
         [TestMethod]
-        public void RollSetsSideCorrectly()
+        [DataRow(6, 5)]
+        [DataRow(10, 2)]
+        [DataRow(8, 5)]
+
+        public void SetSideUpChangesSide(int sides, int setSide)
         {
-            for (int i = 0; i < 100; i++)
-            {
-                def.Roll();
-                def.CurrentSide.Should().BeInRange(1, 6);
-            }
+
+            Die dice = new Die(sides);
+            int result = dice.SetSideUp(setSide);
+            result.Should().Be(setSide);
+
         }
     }
 }
