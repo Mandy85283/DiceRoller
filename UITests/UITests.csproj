@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -28,11 +28,18 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.12.0" />
-    <PackageReference Include="Xamarin.UITest" Version="3.2.2" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="Xamarin.UITest" Version="3.2.8" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DiceRoller\DiceRoller\DiceRoller.csproj">
+      <Project>{50a1d34b-8aa3-420d-be8f-45e60c6f054b}</Project>
+      <Name>DiceRoller</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests.cs" />

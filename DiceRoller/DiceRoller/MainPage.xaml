@@ -16,9 +16,9 @@
         </StackLayout>
         <Button Text="Display one result" Clicked="DisplayOne"/>
         <Button Text="Display two results" Clicked="DisplayTwo" />
-        <Label x:Name="Result1" />
+        <Label x:Name="Result1"  FontAttributes="Bold" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" />
 
-        <Label x:Name="Result2" IsVisible="false" />
+        <Label x:Name="Result2" IsVisible="false" FontAttributes="Bold" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" />
     </StackLayout>
 
 </ContentPage>
